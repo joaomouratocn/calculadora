@@ -82,7 +82,8 @@ class MainActivity : AppCompatActivity(){
     //valida e set senais e ponto
     private fun setSignalAndDot(key:KeyValues){
         if(key == DOT) {
-            if (input[input.length - 1].isDigit()) input += key.value
+            if (input == "") input = "0."
+            else if (input[input.length - 1].isDigit()) input += key.value
         }else {
             if (input[input.length - 1].isDigit()) input += key.value
             else input = input.dropLast(1)+key.value
